@@ -1,3 +1,0 @@
-regrettable.dev {
-	reverse_proxy app:8080
-}
