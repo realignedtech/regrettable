@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regrettable - Build Something Truly Horrible</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="/logo.png" alt="Regrettable logo" class="logo-img">
+                <span class="logo-text">regrettable</span>
+            </div>
+            <div class="nav-links">
+                <a href="#solutions">Solutions</a>
+                <a href="#templates">Templates</a>
+                <a href="#pricing">Pricing</a>
+                <a href="https://www.reddit.com/r/vibecoding/" target="_blank" rel="noopener">Community</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="login-btn">Log in (tbd)</a>
+                <a href="#" class="cta-btn">Get started 💩</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Build something <span class="highlight" id="typewriter"></span><span class="typewriter-cursor">|</span></h1>
+                <p class="subtitle">Create apps and websites by yelling at AI until it gives up</p>
+
+                <div class="input-container">
+                    <input type="text" placeholder="This won't work, but describe it anyway..." class="app-input" id="prompt-input">
+                    <button class="generate-btn" id="generate-btn">Generate Chaos →</button>
+                </div>
+
+                <div id="result-container" class="result-container" style="display: none;">
+                    <div class="result-header">
+                        <img src="/logo.png" alt="" class="logo-img-small">
+                        <span class="result-title">Your Regrettable Creation</span>
+                    </div>
+                    <div class="result-body">
+                        <div class="project-name" id="project-name"></div>
+                        <div class="result-text" id="result-text"></div>
+                        <div class="result-stats">
+                            <div class="stat"><span class="stat-value" id="confidence">0%</span><span class="stat-label">Confidence</span></div>
+                            <div class="stat"><span class="stat-value" id="bugs">0</span><span class="stat-label">Bugs</span></div>
+                            <div class="stat"><span class="stat-value" id="loc">0</span><span class="stat-label">Lines of Code</span></div>
+                            <div class="stat"><span class="stat-value" id="deps">0</span><span class="stat-label">Dependencies</span></div>
+                        </div>
+                        <div class="time-to-regret">Time to regret: <span id="regret-time">immediately</span></div>
+                        <button class="export-btn" id="export-btn">📸 Export as Image</button>
+                    </div>
+                </div>
+
+                <div class="trust-badges" id="trust-badges">
+                    <span>🔥 10,000+ projects abandoned</span>
+                    <span>⭐ 1.2 stars on TrustPilot</span>
+                    <span>🐛 Infinite bugs guaranteed</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-header error">⚠️ Error</div>
+                    <div class="card-body">undefined is not a function</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-header warning">🔄 Loading...</div>
+                    <div class="card-body">Please wait forever</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-header success">✓ Deployed</div>
+                    <div class="card-body">To production on Friday at 5pm</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="solutions" id="solutions">
+            <h2>Solutions for Everyone Who Should Know Better</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">🎭</div>
+                    <h3>For Founders</h3>
+                    <p>Build your MVP in 10 minutes, spend 10 years explaining to investors why it doesn't work</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">📊</div>
+                    <h3>For Product Managers</h3>
+                    <p>Finally, a tool that matches the quality of your Jira tickets</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">🎨</div>
+                    <h3>For Designers</h3>
+                    <p>Watch in horror as AI interprets "clean and minimal" as "Times New Roman on beige"</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">📢</div>
+                    <h3>For Marketers</h3>
+                    <p>Create landing pages that convert visitors into people who close the tab immediately</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose Regrettable?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast*</h3>
+                    <p>*On a quantum computer from the future. Results may vary on actual hardware.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure-ish</h3>
+                    <p>We store your passwords in a spreadsheet. It's password protected though.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Powered</h3>
+                    <p>Our AI was trained on Stack Overflow questions, not answers.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Scale</h3>
+                    <p>Your app can crash in over 150 countries simultaneously.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="templates" id="templates">
+            <h2>Featured Templates</h2>
+            <p class="section-subtitle">Start with something terrible, make it worse</p>
+            <div class="templates-grid">
+                <div class="template-card">
+                    <div class="template-preview ecommerce">
+                        <div class="preview-content">
+                            <div class="fake-header"></div>
+                            <div class="fake-products">
+                                <div class="fake-product"></div>
+                                <div class="fake-product"></div>
+                                <div class="fake-product"></div>
+                            </div>
+                        </div>
+                        <div class="template-overlay">
+                            <span class="broken-badge">Cart doesn't work</span>
+                        </div>
+                    </div>
+                    <h4>E-commerce Store</h4>
+                    <p>Payments go to a random crypto wallet</p>
+                </div>
+                <div class="template-card">
+                    <div class="template-preview portfolio">
+                        <div class="preview-content">
+                            <div class="fake-hero-text"></div>
+                            <div class="fake-gallery">
+                                <div class="fake-img"></div>
+                                <div class="fake-img"></div>
+                            </div>
+                        </div>
+                        <div class="template-overlay">
+                            <span class="broken-badge">Images won't load</span>
+                        </div>
+                    </div>
+                    <h4>Portfolio Site</h4>
+                    <p>Showcase work you definitely didn't do</p>
+                </div>
+                <div class="template-card">
+                    <div class="template-preview blog">
+                        <div class="preview-content">
+                            <div class="fake-post"></div>
+                            <div class="fake-post"></div>
+                        </div>
+                        <div class="template-overlay">
+                            <span class="broken-badge">SEO: -10</span>
+                        </div>
+                    </div>
+                    <h4>Personal Blog</h4>
+                    <p>For thoughts nobody asked for</p>
+                </div>
+                <div class="template-card">
+                    <div class="template-preview saas">
+                        <div class="preview-content">
+                            <div class="fake-dashboard">
+                                <div class="fake-chart"></div>
+                                <div class="fake-stats"></div>
+                            </div>
+                        </div>
+                        <div class="template-overlay">
+                            <span class="broken-badge">Data is fake</span>
+                        </div>
+                    </div>
+                    <h4>SaaS Dashboard</h4>
+                    <p>Beautiful charts showing made-up numbers</p>
+                </div>
+                <div class="template-card">
+                    <div class="template-preview landing">
+                        <div class="preview-content">
+                            <div class="fake-hero"></div>
+                            <div class="fake-cta"></div>
+                        </div>
+                        <div class="template-overlay">
+                            <span class="broken-badge">CTA broken</span>
+                        </div>
+                    </div>
+                    <h4>Landing Page</h4>
+                    <p>Converts at a stunning 0.001%</p>
+                </div>
+                <div class="template-card">
+                    <div class="template-preview social">
+                        <div class="preview-content">
+                            <div class="fake-feed">
+                                <div class="fake-post-item"></div>
+                                <div class="fake-post-item"></div>
+                            </div>
+                        </div>
+                        <div class="template-overlay">
+                            <span class="broken-badge">No users</span>
+                        </div>
+                    </div>
+                    <h4>Social Network</h4>
+                    <p>Be the only user on your platform</p>
+                </div>
+                <div class="template-card">
+                    <div class="template-preview ai">
+                        <div class="preview-content">
+                            <div class="fake-chat">
+                                <div class="fake-message"></div>
+                                <div class="fake-message"></div>
+                            </div>
+                        </div>
+                        <div class="template-overlay">
+                            <span class="broken-badge">Hallucinates</span>
+                        </div>
+                    </div>
+                    <h4>AI Wrapper</h4>
+                    <p>ChatGPT with extra steps and latency</p>
+                </div>
+                <div class="template-card">
+                    <div class="template-preview crypto">
+                        <div class="preview-content">
+                            <div class="fake-wallet"></div>
+                            <div class="fake-coins"></div>
+                        </div>
+                        <div class="template-overlay">
+                            <span class="broken-badge">Probably illegal</span>
+                        </div>
+                    </div>
+                    <h4>Crypto Exchange</h4>
+                    <p>Lose money faster than ever before</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing" id="pricing">
+            <h2>Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">Pay us money to make your problems worse</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <div class="price">$0<span>/forever</span></div>
+                    <ul>
+                        <li>✓ 3 broken projects</li>
+                        <li>✓ Community support (nobody replies)</li>
+                        <li>✓ 100MB of bugs included</li>
+                        <li>✗ Sleep at night</li>
+                    </ul>
+                    <button class="pricing-btn">Start Regretting</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Regrettable</div>
+                    <h3>Pro</h3>
+                    <div class="price">$29<span>/month</span></div>
+                    <ul>
+                        <li>✓ Unlimited broken projects</li>
+                        <li>✓ Priority support (still nobody)</li>
+                        <li>✓ Custom domains (they won't resolve)</li>
+                        <li>✓ Analytics (only vibecoded mockups for now)</li>
+                    </ul>
+                    <button class="pricing-btn featured-btn">Maximum Regret</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$???<span>/month</span></div>
+                    <ul>
+                        <li>✓ Everything in Pro</li>
+                        <li>✓ Dedicated account manager (bot)</li>
+                        <li>✓ SLA (we promise nothing)</li>
+                        <li>✓ On-premise deployment (good luck)</li>
+                    </ul>
+                    <button class="pricing-btn">Contact Sales (please)</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Users Regret</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"I built my startup's MVP with Regrettable. We pivoted 47 times and eventually became a coffee shop."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💼</div>
+                        <div>
+                            <strong>Chad Startup</strong>
+                            <span>Former Tech Bro, Now Barista</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"The AI understood my vision perfectly. Unfortunately, my vision was terrible."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🎨</div>
+                        <div>
+                            <strong>Karen Designer</strong>
+                            <span>UX Designer, 0 Users</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Pushed my OpenAI API key to GitHub. Woke up to a $47,000 bill and someone training a model to write Shrek fanfiction."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🧑‍💻</div>
+                        <div>
+                            <strong>Debug McBugface</strong>
+                            <span>Formerly Employed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Ready to build something <span class="gradient-text-blue">actually useful</span>?</h2>
+            <p>Start with a plan, not a prayer</p>
+            <a href="https://storymapping.app" target="_blank" rel="noopener" class="big-cta">Try Storymap →</a>
+
+            <p class="cta-disclaimer">Built by humans. Plan first. Build better.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="/logo.png" alt="Regrettable logo" class="logo-img">
+                    <span>regrettable</span>
+                </div>
+                <p>Building tomorrow's legacy code, today.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="#">Features (broken)</a>
+                <a href="#">Pricing (confusing)</a>
+                <a href="#">Templates (ugly)</a>
+                <a href="#">API (undocumented)</a>
+            </div>
+            <div class="footer-col">
+                <h4>Community</h4>
+                <a href="#">Discord (toxic)</a>
+                <a href="#">GitHub (archived)</a>
+                <a href="#">Twitter (suspended)</a>
+                <a href="#">Blog (abandoned)</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">Docs (outdated)</a>
+                <a href="#">Tutorials (wrong)</a>
+                <a href="#">Examples (broken)</a>
+                <a href="#">FAQ (useless)</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#">Privacy (lol)</a>
+                <a href="#">Terms (scary)</a>
+                <a href="#">Cookies (too many)</a>
+                <a href="#">GDPR (ignored)</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Thu Jan 01 1970 00:00:01 GMT+0000 Regrettable. All rights reversed. Made with 🔥 and questionable judgment.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Typewriter effect - words that rhyme with "regrettable"
+        const typewriterWords = [
+            'regrettable',
+            'forgettable',
+            'horrible',
+            'unseeable',
+            'insufferable',
+            'really really unnecessary',
+            'completely avoidable',
+            'that makes people miserable',
+            'highly questionable',
+            'emotionally unavailable',
+            'disappointingly predictable',
+            'inexcusable',
+            'unreasonable'
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typewriterElement = null;
+
+        function typeWriter() {
+            if (!typewriterElement) {
+                typewriterElement = document.getElementById('typewriter');
+            }
+
+            const currentWord = typewriterWords[wordIndex];
+
+            if (isDeleting) {
+                typewriterElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 150; // Slower typing, faster deleting
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                typeSpeed = 2500; // Pause at end of word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % typewriterWords.length;
+                typeSpeed = 600; // Pause before next word
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Start typewriter on load
+        document.addEventListener('DOMContentLoaded', typeWriter);
+
+        // Load live stats on page load
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/stats');
+                const stats = await response.json();
+
+                const badges = document.getElementById('trust-badges');
+                badges.innerHTML = `
+                    <span>🔥 ${stats.projects_abandoned.toLocaleString()}+ projects abandoned</span>
+                    <span>⏱️ Last incident: ${stats.last_incident}</span>
+                    <span>🐛 ${stats.bugs_generated.toLocaleString()} bugs generated</span>
+                `;
+            } catch (e) {
+                console.log('Stats failed to load. How fitting.');
+            }
+        }
+
+        // Generate chaos when button is clicked
+        document.getElementById('generate-btn').addEventListener('click', async () => {
+            const prompt = document.getElementById('prompt-input').value || 'something terrible';
+            const btn = document.getElementById('generate-btn');
+            const resultContainer = document.getElementById('result-container');
+
+            // Show loading state
+            btn.textContent = '🔄 Generating Chaos...';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt })
+                });
+
+                const data = await response.json();
+
+                // Update result display
+                document.getElementById('project-name').textContent = `Project: ${data.project_name}`;
+                document.getElementById('result-text').textContent = data.result;
+                document.getElementById('confidence').textContent = `${Math.round(data.confidence * 100)}%`;
+                document.getElementById('bugs').textContent = data.bugs_included;
+                document.getElementById('loc').textContent = data.lines_of_code.toLocaleString();
+                document.getElementById('deps').textContent = data.dependencies;
+                document.getElementById('regret-time').textContent = data.time_to_regret;
+
+                // Show result container with animation
+                resultContainer.style.display = 'block';
+                resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            } catch (e) {
+                alert('Generation failed. Even our failures fail.');
+            } finally {
+                btn.textContent = 'Generate Chaos →';
+                btn.disabled = false;
+            }
+        });
+
+        // Also trigger on Enter key
+        document.getElementById('prompt-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('generate-btn').click();
+            }
+        });
+
+        // Load stats on page load
+        loadStats();
+
+        // Refresh stats every 30 seconds for "realism"
+        setInterval(loadStats, 30000);
+
+        // Export result as image
+        document.getElementById('export-btn').addEventListener('click', async () => {
+            const btn = document.getElementById('export-btn');
+            const container = document.getElementById('result-container');
+
+            btn.textContent = '⏳ Exporting...';
+            btn.disabled = true;
+
+            try {
+                // Hide the export button during capture
+                btn.style.display = 'none';
+
+                // Force solid background and full opacity for export (fixes transparency issue)
+                const originalBg = container.style.background;
+                const originalOpacity = container.style.opacity;
+                const originalAnimation = container.style.animation;
+                container.style.background = '#ffffff';
+                container.style.opacity = '1';
+                container.style.animation = 'none';
+
+                const canvas = await html2canvas(container, {
+                    backgroundColor: '#ffffff',
+                    scale: 2, // Higher resolution
+                    logging: false
+                });
+
+                // Restore original styling
+                container.style.background = originalBg;
+                container.style.opacity = originalOpacity;
+                container.style.animation = originalAnimation;
+                btn.style.display = 'block';
+
+                // Download the image
+                const link = document.createElement('a');
+                link.download = 'regrettable-creation.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            } catch (e) {
+                alert('Export failed. Even our exports fail.');
+            } finally {
+                btn.textContent = '📸 Export as Image';
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
